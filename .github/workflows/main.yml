@@ -10,8 +10,8 @@ jobs:
 
       - name: 🔨 Build Project
         run: |
-        pnpm install
-        pnpm run build
+          pnpm install
+          pnpm run build
 
       - name: 📂 Sync files
         uses: SamKirkland/FTP-Deploy-Action@4.3.3
