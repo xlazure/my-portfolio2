@@ -14,4 +14,4 @@ jobs:
           server: v-xlazure2.vipserv.org
           username: ${{ secrets.ftp_username }}
           password: ${{ secrets.ftp_password }}
-          server-dir: /public_html/xlazure.vipserv.org
+          server-dir: /public_html/xlazure.vipserv.org/
