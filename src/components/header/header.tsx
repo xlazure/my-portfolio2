@@ -41,12 +41,16 @@ function Header(props: HeaderProps) {
 
       <div className={style.options}>
         <div className={style.social}>
-          <a href="https://www.linkedin.com/in/xlazure/" target="_blank">
+          <a
+            href="https://www.linkedin.com/in/xlazure/"
+            target="_blank"
+            rel="noreferrer"
+          >
             <AiFillLinkedin />
           </a>
         </div>
         <div className={style.social}>
-          <a href="https://github.com/xlazure" target="_blank">
+          <a href="https://github.com/xlazure" target="_blank" rel="noreferrer">
             <AiFillGithub />
           </a>
         </div>
