@@ -8,8 +8,8 @@ interface HeaderProps {
 }
 
 function Header(props: HeaderProps) {
-  const headerRef = useRef(null);
-  const navRef = useRef(null);
+  const headerRef = useRef<HTMLElement>(null);
+  const navRef = useRef<HTMLUListElement>(null);
 
   function getHeaderHeight() {
     const height =
