@@ -1,3 +1,5 @@
+import Header from "@/components/header/header";
+import PageLayout from "@/Layout/PageLayout";
 import Head from "next/head";
 
 export default function Home() {
@@ -10,9 +12,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
         <title>My portfolio</title>
       </Head>
-      <main>
-        <h1>Hello next.js</h1>
-      </main>
+      <PageLayout header={<Header />} />
     </>
   );
 }
