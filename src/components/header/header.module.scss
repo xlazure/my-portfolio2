@@ -1,3 +1,5 @@
+@import "../../styles//variables";
+
 .headerContainer {
   display: flex;
   nav,
@@ -8,14 +10,14 @@
 
 .headerContainer {
   width: 100%;
-  background-color: #b8b8b8;
+  background-color: $palette-analogous-4;
   padding: 0.5em 1em;
   align-items: center;
   justify-content: space-between;
 
   position: fixed;
   left: 0;
-  z-index: 111;
+  z-index: 1111;
 
   transition: top 0.3s ease-in-out;
 
@@ -33,7 +35,8 @@
         }
         &:hover {
           cursor: pointer;
-          border-bottom: 1px solid red;
+          color: $palette-analogous-2;
+          // border-bottom: 1px solid red;
         }
       }
     }
@@ -54,7 +57,7 @@
           color: #fff;
         }
         &:hover {
-          color: #c4c4c4;
+          color: $palette-analogous-1;
         }
       }
     }

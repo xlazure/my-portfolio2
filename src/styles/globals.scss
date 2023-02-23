@@ -1,9 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;400;700&display=swap");
-
+@import "./variables.scss";
 *,
 *::after,
 *::before {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html {
+  font-family: "Open Sans", sans-serif;
+  scroll-behavior: smooth;
+}
+body {
+  // background-color: #fff;
+  background-color: $palette-analogous-4;
+  color: $palette-analogous-1;
 }

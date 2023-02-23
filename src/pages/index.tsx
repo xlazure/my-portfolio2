@@ -1,5 +1,7 @@
 import Header from "@/components/header/header";
 import PageLayout from "@/Layout/PageLayout";
+import EntrySection from "@/modules/entrySection";
+import SkillsSection from "@/modules/skillsSection";
 import Head from "next/head";
 
 export default function Home() {
@@ -12,7 +14,11 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
         <title>My portfolio</title>
       </Head>
-      <PageLayout header={<Header />} />
+      <PageLayout
+        header={<Header />}
+        firstSection={<EntrySection />}
+        secondSection={<SkillsSection />}
+      />
     </>
   );
 }
