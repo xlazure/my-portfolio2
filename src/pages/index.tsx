@@ -3,6 +3,7 @@ import PageLayout from "@/Layout/PageLayout";
 import EntrySection from "@/modules/entrySection";
 import SkillsSection from "@/modules/skillsSection";
 import Head from "next/head";
+import { useEffect, useState } from "react";
 
 export default function Home() {
   return (
