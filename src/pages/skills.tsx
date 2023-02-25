@@ -1,11 +1,9 @@
 import Header from "@/components/header/header";
 import PageLayout from "@/Layout/PageLayout";
-import EntrySection from "@/modules/entrySection";
 import SkillsSection from "@/modules/skillsSection";
 import Head from "next/head";
-import { useEffect, useState } from "react";
 
-export default function Home() {
+export default function Skills() {
   return (
     <>
       <Head>
@@ -15,7 +13,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
         <title>My portfolio</title>
       </Head>
-      <EntrySection />
+      <SkillsSection />
     </>
   );
 }

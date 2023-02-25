@@ -1,4 +1,5 @@
 import { withToggleHeader } from "@/hoc/withToggleHeader";
+import Link from "next/link";
 import { useRef } from "react";
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 import style from "./header.module.scss";
@@ -8,8 +9,8 @@ interface HeaderProps {
 }
 
 function Header(props: HeaderProps) {
-  const headerRef = useRef<HTMLElement>(null);
-  const navRef = useRef<HTMLUListElement>(null);
+  const headerRef = useRef(null);
+  const navRef = useRef(null);
 
   function getHeaderHeight() {
     const height =
@@ -22,20 +23,25 @@ function Header(props: HeaderProps) {
     <header
       ref={headerRef}
       className={style.headerContainer}
-      style={getHeaderHeight()}
+      // style={getHeaderHeight()}
     >
+      <div>
+        <Link href="/">
+          <h1>Logo</h1>
+        </Link>
+      </div>
       <nav ref={navRef}>
         <li>
-          <a href="#aboutSection">About</a>
+          <Link href="/about">About</Link>
         </li>
         <li>
-          <a href="#skillsSection">Skills</a>
+          <Link href="/skills">Skills</Link>
         </li>
         <li>
-          <a href="#projectsSection">Projects</a>
+          <Link href="/projects">Projects</Link>
         </li>
         <li>
-          <a href="#contactSection">Contact</a>
+          <Link href="/contact">Contact</Link>
         </li>
       </nav>
 
@@ -58,4 +64,4 @@ function Header(props: HeaderProps) {
     </header>
   );
 }
-export default withToggleHeader(Header);
+export default Header;
