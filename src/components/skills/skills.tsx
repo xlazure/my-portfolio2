@@ -5,10 +5,14 @@ export default function ShowMySkills() {
 
   useEffect(() => {
     async function fetchData() {
-      const api = "http://localhost:1337/api/skills";
-      const res = await fetch(api);
-      const resData = await res.json();
-      console.log(resData.data);
+      try {
+        const api = "http://localhost:1337/api/skills";
+        const res = await fetch(api);
+        const resData = await res.json();
+        console.log(resData.data);
+      } catch (err) {
+        console.log(err);
+      }
     }
     fetchData();
   }, []);
