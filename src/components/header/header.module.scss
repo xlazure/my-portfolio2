@@ -20,14 +20,16 @@
   z-index: 1111;
 
   transition: top 0.3s ease-in-out;
-
+  a {
+    color: $palette-analogous-1;
+    text-decoration: none;
+  }
   nav {
     li {
       list-style-type: none;
       a {
         display: block;
         padding: 0.5em 1em;
-        text-decoration: none;
         border-bottom: 1px solid transparent;
 
         &:visited {
