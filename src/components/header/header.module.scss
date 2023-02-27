@@ -9,6 +9,8 @@
 }
 
 .headerContainer {
+  // box-shadow: 0 0 7px 1px rgba(255, 250, 250, 0.44);
+  border-bottom: 1px solid rgba(255, 250, 250, 0.217);
   width: 100%;
   background-color: $palette-analogous-4;
   padding: 0.5em 1em;
@@ -20,9 +22,20 @@
   z-index: 1111;
 
   transition: top 0.3s ease-in-out;
+  .activeLink {
+    transition: 0.4s ease-in-out;
+    font-weight: 700;
+  }
   a {
     color: $palette-analogous-1;
     text-decoration: none;
+  }
+  h1 {
+    transition: transform 0.3s ease-in-out;
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.1, 1.1);
+    }
   }
   nav {
     li {

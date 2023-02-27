@@ -1,22 +1,46 @@
-import { withToggleHeader } from "@/hoc/withToggleHeader";
-import Link from "next/link";
-import { useRef } from "react";
+import { usePage } from "@/context/pageContext";
+import { useRouter } from "next/router";
+import { useEffect, useLayoutEffect, useRef } from "react";
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 import style from "./header.module.scss";
 
-interface HeaderProps {
-  hide: boolean;
+interface PagesProps {
+  href: string;
+  name: string;
 }
 
-function Header(props: HeaderProps) {
+function Header(): JSX.Element {
   const headerRef = useRef(null);
   const navRef = useRef(null);
+  const router = useRouter();
+  const { setIsRedirecting } = usePage();
+  const curr =
+    router.pathname.replace("/", "") === undefined
+      ? " "
+      : router.pathname.replace("/", "");
 
-  function getHeaderHeight() {
-    const height =
-      headerRef.current !== null ? `-${headerRef.current.offsetHeight}px` : "0";
+  // function getHeaderHeight() {
+  //   const height =
+  //     headerRef.current !== null ? `-${headerRef.current.offsetHeight}px` : "0";
 
-    return { top: props.hide ? height : "0" };
+  //   return { top: props.hide ? height : "0" };
+  // }
+
+  const pages: PagesProps[] = [
+    { href: "/about", name: "About" },
+    { href: "/skills", name: "Skills" },
+    { href: "/projects", name: "Projects" },
+    { href: "/contact", name: "Contact" },
+  ];
+
+  function handleLinkClick(item?: PagesProps): void {
+    const itemName =
+      item?.name.toLowerCase() === undefined ? "" : item?.name.toLowerCase();
+    if (curr === itemName) return;
+    setIsRedirecting(true);
+    setTimeout(() => {
+      router.push(item?.href ? item.href : "/");
+    }, 500);
   }
 
   return (
@@ -26,23 +50,29 @@ function Header(props: HeaderProps) {
       // style={getHeaderHeight()}
     >
       <div>
-        <Link href="/">
-          <h1>Logo</h1>
-        </Link>
+        <a
+          onClick={() => {
+            handleLinkClick();
+          }}
+        >
+          <h1>Portfolio</h1>
+        </a>
       </div>
       <nav ref={navRef}>
-        <li>
-          <Link href="/about">About</Link>
-        </li>
-        <li>
-          <Link href="/skills">Skills</Link>
-        </li>
-        <li>
-          <Link href="/projects">Projects</Link>
-        </li>
-        <li>
-          <Link href="/contact">Contact</Link>
-        </li>
+        {pages.map((item) => {
+          return (
+            <li key={item.name}>
+              <a
+                onClick={() => handleLinkClick(item)}
+                className={`${
+                  item.name.toLowerCase() === curr ? style.activeLink : null
+                }`}
+              >
+                {item.name}
+              </a>
+            </li>
+          );
+        })}
       </nav>
 
       <div className={style.options}>
