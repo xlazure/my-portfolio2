@@ -19,7 +19,7 @@ export function usePage(): PageContextType {
 }
 
 export function PageProvider({ children }: PageProviderProps) {
-  const [isRedirecting, setIsRedirecting] = useState(false);
+  const [isRedirecting, setIsRedirecting] = useState(true);
 
   // useEffect(() => {}, []);
 

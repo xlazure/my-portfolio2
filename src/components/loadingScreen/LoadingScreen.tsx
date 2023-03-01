@@ -1,11 +1,13 @@
-import { useLayoutEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import style from "./loadingScreen.module.scss";
 
 export default function LoadingScreen() {
   const [loadingScreen, setLoadingScreen] = useState<boolean>(true);
 
-  useLayoutEffect(() => {
-    setLoadingScreen(false);
+  useEffect(() => {
+    setTimeout(() => {
+      setLoadingScreen(false);
+    }, 1000);
   }, []);
 
   const styles: any = {

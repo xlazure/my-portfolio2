@@ -1,4 +1,4 @@
-import ShowMySkills from "@/components/skills/skills";
+import ShowMySkills from "@/components/skills/ShowMySkills";
 import Head from "next/head";
 
 function Skills({ data }: any) {
@@ -16,13 +16,12 @@ function Skills({ data }: any) {
 }
 
 export async function getStaticProps() {
-  const API = "https://vg2sbmir.directus.app/items/skills";
+  const API = "http://localhost:8888/cms/wp-json/wp/v2/posts?slug=portfolio";
   const res = await fetch(API, {
     method: "GET",
     headers: {},
   });
-  const { data } = await res.json();
-  console.log(data);
+  const data = await res.json();
   return {
     props: {
       data,

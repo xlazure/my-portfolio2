@@ -1,6 +1,7 @@
 import Head from "next/head";
 
-function Skills() {
+function Contact() {
+  console.log("contact");
   return (
     <>
       <Head>
@@ -13,4 +14,4 @@ function Skills() {
   );
 }
 
-export default Skills;
+export default Contact;

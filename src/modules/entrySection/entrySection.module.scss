@@ -1,8 +1,10 @@
 .container {
-  height: 100vh;
   background-image: url("../../assets/img/code-bg.jfif");
   // background-image: url("../../assets/img/giphy.gif");
   background-size: 100% 100%;
+
+  min-height: 90vh;
+
   position: relative;
   // filter: blur(1px);
 

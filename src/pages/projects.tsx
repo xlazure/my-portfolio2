@@ -1,7 +1,9 @@
+import MyProjects from "@/components/MyProjects/MyProjects";
 import Head from "next/head";
 
-function Projects() {
-  // console.log(data);
+function Projects({ data }: any) {
+  console.log("projects");
+
   return (
     <>
       <Head>
@@ -10,8 +12,30 @@ function Projects() {
         <link rel="icon" href="/favicon.ico" />
         <title>My Projects</title>
       </Head>
+      <MyProjects data={data} />
     </>
   );
+}
+
+export async function getStaticProps() {
+  try {
+    const OPTIONS = {
+      method: "GET",
+    };
+    const GITHUB_API = "https://api.github.com/users/xlazure/repos";
+    const res = await fetch(GITHUB_API, OPTIONS);
+    const data = await res.json();
+
+    return {
+      props: {
+        data,
+      },
+    };
+  } catch (err) {
+    return {
+      props: {},
+    };
+  }
 }
 
 export default Projects;

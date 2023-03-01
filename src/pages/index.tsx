@@ -2,6 +2,7 @@ import EntrySection from "@/modules/entrySection";
 import Head from "next/head";
 
 export default function Home() {
+  console.log("home");
   return (
     <>
       <Head>
