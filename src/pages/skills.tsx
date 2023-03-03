@@ -10,23 +10,30 @@ function Skills({ data }: any) {
         <link rel="icon" href="/favicon.ico" />
         <title>My Skills</title>
       </Head>
+
       <ShowMySkills data={data} />
     </>
   );
 }
 
 export async function getStaticProps() {
-  const API = "http://localhost:8888/cms/wp-json/wp/v2/posts?slug=portfolio";
-  const res = await fetch(API, {
-    method: "GET",
-    headers: {},
-  });
-  const data = await res.json();
-  return {
-    props: {
-      data,
-    },
-  };
+  try {
+    const API = "http://localhost:8888/cms/wp-json/wp/v2/posts?slug=portfolio";
+    const res = await fetch(API, {
+      method: "GET",
+      headers: {},
+    });
+    const data = await res.json();
+    return {
+      props: {
+        data: data[0].acf,
+      },
+    };
+  } catch {
+    return {
+      props: {},
+    };
+  }
 }
 
 export default Skills;

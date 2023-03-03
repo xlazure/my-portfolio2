@@ -22,7 +22,9 @@ export default function PageLayout(props: any) {
     <>
       <main className={style.Wrapper}>
         {props.header}
-        <div style={customStyles}>{props.main}</div>
+        <div className={style.container} style={customStyles}>
+          {props.main}
+        </div>
         {/* {props.footer} */}
       </main>
     </>

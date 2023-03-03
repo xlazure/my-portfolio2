@@ -1,9 +1,23 @@
 import MyProjects from "@/components/MyProjects/MyProjects";
 import Head from "next/head";
 
-function Projects({ data }: any) {
-  console.log("projects");
+interface ProjectProps {
+  short_desc: string;
+  project_name: string;
+  link_to_demo: string;
+  preview_image: string;
+  github: string;
+  tags: {
+    lang: string;
+    query: string;
+  };
+}
 
+interface ProjectsProps {
+  data: ProjectProps[];
+}
+
+function Projects({ data }: ProjectsProps) {
   return (
     <>
       <Head>
@@ -22,16 +36,16 @@ export async function getStaticProps() {
     const OPTIONS = {
       method: "GET",
     };
-    const GITHUB_API = "https://api.github.com/users/xlazure/repos";
-    const res = await fetch(GITHUB_API, OPTIONS);
+    // const API = "https://api.github.com/users/xlazure/repos";
+    const API = "http://localhost:8888/cms/wp-json/wp/v2/posts?slug=portfolio";
+    const res = await fetch(API, OPTIONS);
     const data = await res.json();
-
     return {
       props: {
-        data,
+        data: data[0].acf.projects,
       },
     };
-  } catch (err) {
+  } catch {
     return {
       props: {},
     };

@@ -14,11 +14,12 @@
   width: 100%;
   background-color: #000;
   // background-color: $palette-analogous-4;
-  padding: 0.5em 1em;
+  padding: 0.2em 1em;
   align-items: center;
   justify-content: space-between;
 
   position: sticky;
+  top: 0;
   left: 0;
   z-index: 1111;
 
@@ -32,6 +33,7 @@
     text-decoration: none;
   }
   h1 {
+    font-size: 1rem;
     transition: transform 0.3s ease-in-out;
     &:hover {
       cursor: pointer;
@@ -46,6 +48,7 @@
         color: $palette-analogous-1;
         padding: 0.5em 1em;
         border-bottom: 1px solid transparent;
+        font-size: 0.55rem;
 
         &:visited {
           color: inherit;
@@ -67,7 +70,7 @@
       padding: 0 0.5em;
       a {
         svg {
-          font-size: 1.8rem;
+          font-size: 0.8rem;
         }
 
         &:visited {

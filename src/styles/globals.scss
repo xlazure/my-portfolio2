@@ -17,3 +17,11 @@ body {
   // background-color: $palette-analogous-4;
   color: $palette-analogous-1;
 }
+
+* {
+  font-size: clamp(1rem, 2.5vw, 2.5rem);
+
+  @media screen and (max-width: 768px) {
+    font-size: clamp(1rem, 8vw, 2.5rem);
+  }
+}
