@@ -13,9 +13,9 @@ interface Props {
 // https://vg2sbmir.directus.app/assets/750702f0-01d6-4244-bd06-ef98f07fd342
 function ShowMySkills({ data }: any): JSX.Element {
   const router = useRouter();
-  const Languages = data.languages;
-  const FrameworksAndLibraries = data.frameworksAndLibraries;
-  const DatabaseAndCms = data.databaseAndCms;
+  const Languages = data?.languages;
+  const FrameworksAndLibraries = data?.frameworksAndLibraries;
+  const DatabaseAndCms = data?.databaseAndCms;
 
   async function FetchImage(id: number): Promise<string> {
     const ASSET_URL = `http://localhost:8888/cms/wp-json/wp/v2/media/${id}`;
