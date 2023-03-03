@@ -16,7 +16,7 @@ export default function PageLayout(props: any) {
     setTimeout(() => {
       setIsRedirecting(false);
     }, 1500);
-  }, [isRedirecting]);
+  }, [isRedirecting, setIsRedirecting]);
 
   return (
     <>

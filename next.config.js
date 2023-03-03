@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ["vg2sbmir.directus.app"],
+    domains: ["vg2sbmir.directus.app", "localhost"],
   },
 };
 
