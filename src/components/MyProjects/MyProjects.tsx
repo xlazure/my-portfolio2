@@ -4,7 +4,6 @@ import { useFetchImage } from "@/hooks/useFetchImage";
 import { BiLinkExternal } from "react-icons/bi";
 import { AiFillGithub } from "react-icons/ai";
 import { useRouter } from "next/router";
-import Image from "next/image";
 
 interface ProjectProps {
   short_desc?: string;
@@ -72,7 +71,7 @@ export default function MyProjects({ data }: any) {
         </div>
         <hr />
         <div className={style.content}>
-          <Image src={img} alt={project_name} width={256} height={128} />
+          <img src={img} alt={project_name} width={256} height={128} />
           <div
             className={style.description}
             dangerouslySetInnerHTML={{ __html: short_desc }}
