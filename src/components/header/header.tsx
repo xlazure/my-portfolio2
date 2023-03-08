@@ -1,6 +1,6 @@
 import { usePage } from "@/context/pageContext";
 import { useRouter } from "next/router";
-import { useEffect, useLayoutEffect, useRef } from "react";
+import { useRef } from "react";
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 import style from "./header.module.scss";
 
@@ -27,7 +27,7 @@ function Header(): JSX.Element {
   // }
 
   const pages: PagesProps[] = [
-    { href: "/about", name: "About" },
+    // { href: "/about", name: "About" },
     { href: "/skills", name: "Skills" },
     { href: "/projects", name: "Projects" },
     { href: "/contact", name: "Contact" },

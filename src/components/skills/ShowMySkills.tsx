@@ -44,7 +44,11 @@ function ShowMySkills({ data }: any): JSX.Element {
         onMouseEnter={() => setIsHovering(true)}
         onMouseLeave={() => setIsHovering(false)}
       >
-        {imgUrl.length < 1 ? "Loading..." : <img src={imgUrl} alt="" />}
+        {imgUrl.length < 1 ? (
+          "Loading..."
+        ) : (
+          <img className={style.skillImg} src={imgUrl} alt="" />
+        )}
         <h4>{name}</h4>
       </div>
     );

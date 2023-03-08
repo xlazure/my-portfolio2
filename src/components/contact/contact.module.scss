@@ -1,0 +1,36 @@
+.container {
+  width: 80%;
+  margin: 0 auto;
+
+  p {
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .form {
+    width: 100%;
+    input:not(input[type="checkbox"]),
+    textarea {
+      margin-bottom: 1em;
+      width: 100%;
+      font-size: 0.67rem;
+      outline: none;
+    }
+
+    label {
+      font-size: 0.5rem;
+    }
+    textarea {
+      resize: none;
+      min-height: 150px;
+    }
+    .agreement {
+      label {
+        margin-left: 0.5rem;
+      }
+    }
+    button {
+      font-size: 0.67rem;
+    }
+  }
+}

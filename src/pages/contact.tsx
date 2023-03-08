@@ -1,3 +1,4 @@
+import ContactForm from "@/components/contact/contactForm";
 import Head from "next/head";
 
 function Contact() {
@@ -10,6 +11,7 @@ function Contact() {
         <link rel="icon" href="/favicon.ico" />
         <title>Keep in touch</title>
       </Head>
+      <ContactForm />
     </>
   );
 }
