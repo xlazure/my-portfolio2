@@ -1,4 +1,3 @@
-import TextTypingAnimation from "@/components/home/textTypingAnimation";
 import { useEffect, useState } from "react";
 import style from "./entrySection.module.scss";
 

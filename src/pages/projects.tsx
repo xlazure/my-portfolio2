@@ -31,13 +31,16 @@ function Projects({ data }: ProjectsProps) {
   );
 }
 
-export async function getStaticProps() {
+export async function getStaticProps({ req }: any) {
+  const hostname = req?.headers?.host || "localhost";
   try {
+    const API =
+      hostname === "localhost"
+        ? "http://localhost:8888/cms/wp-json/wp/v2/posts?slug=portfolio"
+        : "https://my-cms.vipserv.org/wp-json/wp/v2/posts?slug=portfolio";
     const OPTIONS = {
       method: "GET",
     };
-    // const API = "https://api.github.com/users/xlazure/repos";
-    const API = "http://localhost:8888/cms/wp-json/wp/v2/posts?slug=portfolio";
     const res = await fetch(API, OPTIONS);
     const data = await res.json();
     return {
