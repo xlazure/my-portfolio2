@@ -1,7 +1,6 @@
-import Image from "next/image";
 import { useRouter } from "next/router";
 import style from "./skills.module.scss";
-import {useFetchImage} from "@/hooks/useFetchImage";
+import { useFetchImage } from "@/hooks/useFetchImage";
 interface Props {
   name: string;
   icon: number;
@@ -15,20 +14,23 @@ function ShowMySkills({ data }: any): JSX.Element {
   const DatabaseAndCms = data?.databaseAndCms;
 
   function Item({ name, icon, query }: Props) {
-    const img = useFetchImage(icon)
-   async function showProject() {
+    const img = useFetchImage(icon);
+    async function showProject() {
       await router.push(`/projects?query=${query}`);
     }
 
     return (
-      <div
-        onClick={showProject}
-        className={style.item}
-      >
+      <div onClick={showProject} className={style.item}>
         {img.loading ? (
           "Loading..."
         ) : (
-          <Image className={style.skillImg} src={img.uri} alt="" width={128} height={128}/>
+          <img
+            className={style.skillImg}
+            src={img.uri}
+            alt=""
+            width={128}
+            height={128}
+          />
         )}
         <h4>{name}</h4>
       </div>
