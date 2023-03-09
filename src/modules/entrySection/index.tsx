@@ -11,15 +11,12 @@ export default function EntrySection() {
 
   useEffect(() => {
     let index = -1;
-    console.log(greeting.length);
     const addText = setInterval(() => {
-      console.log(index);
       index++;
       setCurrentText((prevArray: Array<string>) => [
         ...prevArray,
         greeting[index],
       ]);
-      console.log(currentText);
 
       if (index === greeting.length - 1) {
         clearInterval(addText);

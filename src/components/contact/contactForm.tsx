@@ -1,5 +1,13 @@
 import style from "./contact.module.scss";
+import {FormEvent} from "react";
 export default function ContactForm() {
+
+  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+
+    console.log('sent contact form')
+  }
+
   return (
     <div className={style.container}>
       <p>
@@ -8,7 +16,7 @@ export default function ContactForm() {
         mój adres e-mail. Czekam na wiadomość od Ciebie!
       </p>
 
-      <form className={style.form}>
+      <form className={style.form} onSubmit={handleSubmit}>
         <div className={style.formInputs}>
           <input type="email" name="email" placeholder="Email" />
           <input type="text" name="subject" placeholder="Temat" />

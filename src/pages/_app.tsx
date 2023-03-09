@@ -17,7 +17,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <PageProvider>
       <PageLayout header={<Header />} main={<Component {...pageProps} />} />
-      <LoadingScreen />
+      {/*<LoadingScreen />*/}
     </PageProvider>
   );
 }

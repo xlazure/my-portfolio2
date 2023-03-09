@@ -4,6 +4,7 @@ import { useFetchImage } from "@/hooks/useFetchImage";
 import { BiLinkExternal } from "react-icons/bi";
 import { AiFillGithub } from "react-icons/ai";
 import { useRouter } from "next/router";
+import Image from "next/image";
 
 interface ProjectProps {
   short_desc?: string;
@@ -37,10 +38,6 @@ export default function MyProjects({ data }: any) {
 
     function matchQuery() {
       const lang: any = router.query;
-      // const tagList = tags.map(({ query }: { query: string }) =>
-      //   query.includes(lang.query)
-      // );
-
       const queryMatch = tags.find(
         (item: { query: string }) => item.query === lang.query
       );
@@ -71,7 +68,7 @@ export default function MyProjects({ data }: any) {
         </div>
         <hr />
         <div className={style.content}>
-          <img src={img} alt={project_name} width={256} height={128} />
+          {img.loading ?  "Loading..." : <Image src={img.uri} alt={project_name} width={256} height={128} />}
           <div
             className={style.description}
             dangerouslySetInnerHTML={{ __html: short_desc }}

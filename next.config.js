@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: false,
   images: {
-    domains: ["vg2sbmir.directus.app", "localhost"],
+    domains: ["my-cms.vipserv.org"],
   },
 };
 

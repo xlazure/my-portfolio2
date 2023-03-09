@@ -1,7 +1,6 @@
 import Head from "next/head";
 
 export default function About() {
-  console.log("about");
   return (
     <>
       <Head>

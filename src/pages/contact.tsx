@@ -2,7 +2,6 @@ import ContactForm from "@/components/contact/contactForm";
 import Head from "next/head";
 
 function Contact() {
-  console.log("contact");
   return (
     <>
       <Head>
